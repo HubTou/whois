@@ -8,7 +8,7 @@ pip install [PNU](https://pypi.org/project/PNU/)
 pip install [pytnix](https://pypi.org/project/pytnix/)
 
 # WHOIS(1), WHOIS(3)
-This repository includes a command-line utility (a portable BSD whois command clone, with enhancements):
+This repository includes a command-line utility (**a portable BSD whois command clone, with enhancements**):
 * [whois(1)](https://github.com/HubTou/whois/blob/main/WHOIS.1.md) - Internet domain name and network number directory service
 
 And a Python library:
