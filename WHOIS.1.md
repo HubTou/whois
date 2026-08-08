@@ -25,20 +25,33 @@ Options | Use
 The COMMAND_DEBUG environment variable can also be set to any value to enable debug mode.
 
 The *FLAVOUR* or *COMMAND_FLAVOUR* environment variables can be set to one of the following values, to implement only the corresponding options and behaviours:
-* posix : POSIX [COMMAND](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/COMMAND.html)
-* unix | unix:v10 : Unix v10 [COMMAND(1)](http://man.cat-v.org/unix_10th/1/COMMAND)
-* bsd | bsd:freebsd : FreeBSD [COMMAND(1)](https://www.freebsd.org/cgi/man.cgi?query=COMMAND)
-* gnu | gnu:linux | linux : GNU/Linux [COMMAND(1)](https://man7.org/linux/man-pages/man1/COMMAND.1.html)
-* plan9 : Plan 9 [COMMAND(1)](http://man.cat-v.org/plan_9/1/COMMAND)
-* inferno : Inferno [COMMAND(1)](http://man.cat-v.org/inferno/1/COMMAND)
-
-However, if the *POSIXLY_CORRECT* environment variable is set to any value, then the POSIX flavour will be selected.
+* bsd | bsd:freebsd : FreeBSD [whois(1)](https://www.freebsd.org/cgi/man.cgi?query=whois)
 
 ## EXIT STATUS
 The **whois** utility exits 0 on success, and >0 if an error occurs.
 
 ## EXAMPLES
+To obtain contact information about an administrator located in the Russian TLD domain "RU", use the *-c* option as shown in the following example, where *CONTACT‐ID* is substituted with the actual contact identifier.
 
+```
+whois ‐c RU CONTACT‐ID
+```
+
+(Note: This example is specific to the TLD "RU", but other TLDs can be queried by using a similar syntax.)
+
+The following example demonstrates how to query a whois server using a non‐standard  port, where “query‐data” is the query to be sent to “whois.example.com” on port “rwhois” (written numerically as 4321).
+
+```
+whois ‐h whois.example.com ‐p rwhois query‐data
+```
+Some whois servers support complex queries with dash‐letter options.
+You can use the -- option to separate whois command options from whois server query options.
+A query containing spaces must be quoted as one argument to the whois command.
+The following example asks the RIPE whois server to return a brief description of its “domain” object type:
+
+```
+whois ‐r ‐‐ ’‐t domain’
+```
 
 ## SEE ALSO
 [wis(1)](https://github.com/HubTou/wis)
@@ -76,7 +89,7 @@ This manual page is mainly based on the one written for [FreeBSD](https://www.fr
 ## CAVEATS
 When serving answers from the database cache, only the main item requested is shown.
 For an inetnum record, for example, the contacts, organisation and routes are not displayed, though you can request their cached version on their own.
-If you want the answer similar to the original one, use the *-D* option to bypass the database cache.
+If you want an answer similar to the original one, use the *-D* option to bypass the database cache.
 Note that for the ARIN registry, there is no obvious relationship with original contacts when you use a cached answer...
 
 The database cache is never purged. 
