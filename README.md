@@ -1,5 +1,6 @@
 # Installation
-Depending on if you want only this tool, the full set of PNU tools, or PNU plus a selection of additional third-parties tools, use one of these commands:
+Once you have installed [Python](https://www.python.org/downloads/) and its packages manager [pip](https://pip.pypa.io/en/stable/installation/),
+use one of the following commands, depending on if you want only this tool, the full set of PNU tools, or PNU plus a selection of additional third-parties tools:
 
 pip install [pnu-whois](https://pypi.org/project/pnu-whois/)
 <br>
@@ -15,3 +16,4 @@ And a Python library:
 * [whois(3)](https://github.com/HubTou/whois/blob/main/WHOIS.3.md) - Internet domain name and network number directory service
 
 Both provide access to classical WHOIS servers (not HTTP servers with RDAP queries), with optional **local caching of results**.
+
