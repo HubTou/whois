@@ -11,7 +11,13 @@ WHOIS - Internet domain name and network number directory service
 \[--\]
 
 ## DESCRIPTION
-The **COMMAND** utility
+The **whois** utility looks up records in the databases maintained by several Network Information Centers (NICs).
+
+By default whois starts by querying the Internet Assigned Numbers Authority (IANA) whois server, and follows referrals to whois servers that have  more specific  details  about the query name. 
+The IANA whois server knows about IP address and AS numbers as well as domain names.
+
+There are a few special cases where referrals do not work,  so  whois goes directly to the appropriate server.
+These include point‐of‐contact handles for ARIN, nic.at, NORID, and RIPE, and domain names under ac.uk.
 
 ### OPTIONS
 Options | Use
@@ -22,10 +28,16 @@ Options | Use
 --|Options processing terminator
 
 ## ENVIRONMENT
-The COMMAND_DEBUG environment variable can also be set to any value to enable debug mode.
+The WHOIS_DEBUG environment variable can also be set to any value to enable debug mode.
 
-The *FLAVOUR* or *COMMAND_FLAVOUR* environment variables can be set to one of the following values, to implement only the corresponding options and behaviours:
+The *FLAVOUR* or *WHOIS_FLAVOUR* environment variables can be set to one of the following values, to implement only the corresponding options and behaviours:
 * bsd | bsd:freebsd : FreeBSD [whois(1)](https://www.freebsd.org/cgi/man.cgi?query=whois)
+
+Other classical environment variables:
+Variable | Use
+------- | ---
+WHOIS_SERVER|The primary default whois server. If this is unset, whois uses the RA_SERVER environment variable.
+RA_SERVER|The secondary default whois server. If this is unset, whois will use whois.iana.org.
 
 ## EXIT STATUS
 The **whois** utility exits 0 on success, and >0 if an error occurs.
@@ -69,7 +81,7 @@ This re-implementation tries to follow the [PEP 8](https://www.python.org/dev/pe
 To be tested under Windows.
 
 ## HISTORY
-The whois command appeared in 4.3BSD.
+The **whois** command appeared in 4.3BSD.
 
 This re-implementation was made for the [PNU project](https://github.com/HubTou/PNU).
 
