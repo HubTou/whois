@@ -32,7 +32,7 @@ WHOIS - Internet domain name and network number directory service
 \[-R|--recursive\]
 \[-S|--verbatim\]	   
 \[--\]
-simple_query|"complex_query" ...
+simple_query|'complex query' ...
 
 ## DESCRIPTION
 The **whois** utility looks up records in the databases maintained by several Network Information Centers (NICs).
@@ -46,10 +46,36 @@ as well as automatically following to the relevant registry server when the ARIN
 ### OPTIONS
 Options | Use
 ------- | ---
+-h\|--host HOST|Use the specified HOST instead of the default. Either a host name or an IP address may be specified.
+-p\|--port PORT|Connect to the whois server on PORT. If this option is not specified, whois defaults to port 43.
+-Q\|--quick|Do a quick lookup; whois will not attempt to follow referrals to other whois servers. This is the default if a server is explicitly specified using one of the other options or in an environment variable. See also the -R option.
+-R\|--recursive|Do a recursive lookup; whois will attempt to follow referrals to other whois servers. This is the default if no server is explicitly specified. See also the -Q option.
+-S\|--verbatim|By default whois adjusts simple queries (without spaces) to produce more useful output from certain whois servers, and it suppresses some uninformative output. With the -S option, whois sends the query and prints the output verbatim.
+-q\|--quiet|Hide comments
+---|---
+-@\|--auto|Tell which server would be selected and abort the query
+-a\|--arin|Use the American Registry for Internet Numbers (ARIN) database. It contains network numbers used in those parts of the world covered neither by APNIC, AfriNIC, LACNIC, nor by RIPE. The query syntax is documented at https://www.arin.net/resources/whoisrws/whois_api.html#nicname
+-A\|--apnic|Use the Asia/Pacific Network Information Center (APNIC) database. It contains network numbers used in East Asia, Australia, New Zealand, and the Pacific islands. Get query syntax documentation using whois ‐A help
+-b\|--abuse|Use the Network Abuse Clearinghouse database. It contains addresses to which network abuse should be reported, indexed by domain name.
+-c\|--tld\|--country TLD|This is the equivalent of using the -h option with an argument of "TLD.whois‐servers.net". This can be helpful for locating country‐class TLD whois servers.
+-f\|--afrinic|Use the African Network Information Centre (AfriNIC) database. It contains network numbers used in Africa and the islands of the western Indian Ocean. Get query syntax documentation using whois ‐f help
+-g\|--gov|Use the US non‐military federal government database, which contains points of contact for subdomains of .GOV.
+-i\|--internic|Use the traditional Network Information Center (InterNIC) (whois.internic.net) database. This now contains only registrations for domain names under .COM, .NET, .EDU. You can specify the type of object to search for like whois ‐i ’type name’ where type can be domain, nameserver, registrar. The name can contain * wildcards.
+-I\|--iana|Use the Internet Assigned Numbers Authority (IANA) database.
+-k\|--kisa\|--krnic|Use the National Internet Development Agency of Korea’s (KRNIC) database. It contains network numbers and domain contact information for Korea.
+-l\|--lacnic|Use the Latin American and Caribbean IP address Regional Registry (LACNIC) database. It contains network numbers used in much of Latin America and the Caribbean.
+-m\|--ra\|--radb|Use the Route Arbiter Database (RADB) database. It contains route policy specifications for a large number of operators’ networks.
+-P\|--peering|Use the PeeringDB database of AS numbers. It contains details about presence at internet peering points for many network operators.
+-r\|--ripe|Use the Réseaux IP Européens (RIPE) database. It contains network numbers and domain contact information for Europe. Get query syntax documentation using whois ‐r help
+---|---
+-d\|--db\|--database DIR|Use the DIR directory as WHOIS cache database
+-D\|--nodb|Don't use the environment defined cache database
+-F\|--force|Force a refresh of the WHOIS cache for the queries
+---|---
 --debug|Enable debug mode
 --help\|-?|Print usage and a short help message and exit
 --version|Print version and exit
---|Options processing terminator
+--|Options processing terminator. Specific WHOIS server options can be used after
 
 ## ENVIRONMENT
 The WHOIS_DEBUG environment variable can also be set to any value to enable debug mode.
