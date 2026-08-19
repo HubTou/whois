@@ -52,7 +52,6 @@ Options | Use
 -R\|--recursive|Do a recursive lookup; whois will attempt to follow referrals to other whois servers. This is the default if no server is explicitly specified. See also the -Q option.
 -S\|--verbatim|By default whois adjusts simple queries (without spaces) to produce more useful output from certain whois servers, and it suppresses some uninformative output. With the -S option, whois sends the query and prints the output verbatim.
 -q\|--quiet|Hide comments
----|---
 -@\|--auto|Tell which server would be selected and abort the query
 -a\|--arin|Use the American Registry for Internet Numbers (ARIN) database. It contains network numbers used in those parts of the world covered neither by APNIC, AfriNIC, LACNIC, nor by RIPE. The query syntax is documented at [https://www.arin.net/resources/registry/whois/rws/cli/](https://www.arin.net/resources/registry/whois/rws/cli/)
 -A\|--apnic|Use the Asia/Pacific Network Information Center (APNIC) database. It contains network numbers used in East Asia, Australia, New Zealand, and the Pacific islands. The query syntax is documented at [https://www.apnic.net/manage-ip/using-whois/searching/query-options/](https://www.apnic.net/manage-ip/using-whois/searching/query-options/) or you can get it using whois -A help
@@ -60,18 +59,16 @@ Options | Use
 -c\|--tld\|--country TLD|This is the equivalent of using the -h option with an argument of "TLD.whois‐servers.net". This can be helpful for locating country‐class TLD whois servers.
 -f\|--afrinic|Use the African Network Information Centre (AfriNIC) database. It contains network numbers used in Africa and the islands of the western Indian Ocean. The query syntax was documented at [https://www.afrinic.net/support/whois/manual](https://web.archive.org/web/20201022084312/https://www.afrinic.net/support/whois/manual) or you can get it using whois ‐f help
 -g\|--gov|Use the US non‐military federal government database, which contains points of contact for subdomains of .GOV.
--i\|--internic|Use the traditional Network Information Center (InterNIC) (whois.internic.net) database. This now contains only registrations for domain names under .COM, .NET, .EDU. You can specify the type of object to search for like whois ‐i ’type name’ where type can be domain, nameserver, registrar. The name can contain * wildcards.
--I\|--iana|Use the Internet Assigned Numbers Authority (IANA) database.
+-i\|--internic|Use the traditional Network Information Center (InterNIC) (whois.internic.net) database. This now contains only registrations for domain names under .COM, .NET, .EDU. You can specify the type of object to search for like whois ‐i ’type name’ where type can be domain, nameserver, registrar. The name can contain * wildcards. Get query syntax documentation using whois -i help
+-I\|--iana|Use the Internet Assigned Numbers Authority (IANA) database. The query syntax is documented at [https://www.iana.org/help/whois](https://www.iana.org/help/whois)
 -k\|--kisa\|--krnic|Use the National Internet Development Agency of Korea’s (KRNIC) database. It contains network numbers and domain contact information for Korea.
 -l\|--lacnic|Use the Latin American and Caribbean IP address Regional Registry (LACNIC) database. This server accepts only direct match queries (POCs, ownerid, CIDR blocks, IP and AS numbers).
 -m\|--ra\|--radb|Use the Route Arbiter Database (RADB) database. It contains route policy specifications for a large number of operators’ networks.
 -P\|--peering|Use the PeeringDB database of AS numbers. It contains details about presence at internet peering points for many network operators.
 -r\|--ripe|Use the Réseaux IP Européens (RIPE) database. It contains network numbers and domain contact information for Europe. The query syntax is documented at [https://docs.db.ripe.net/Tables-of-Query-Types-Supported-by-the-RIPE-Database#tables-of-query-types-supported-by-the-ripe-database](https://docs.db.ripe.net/Tables-of-Query-Types-Supported-by-the-RIPE-Database#tables-of-query-types-supported-by-the-ripe-database) or you can get it using whois ‐r help
----|---
 -d\|--db\|--database DIR|Use the DIR directory as WHOIS cache database
 -D\|--nodb|Don't use the environment defined cache database
 -F\|--force|Force a refresh of the WHOIS cache for the queries
----|---
 --debug|Enable debug mode
 --help\|-?|Print usage and a short help message and exit
 --version|Print version and exit
