@@ -54,19 +54,19 @@ Options | Use
 -q\|--quiet|Hide comments
 ---|---
 -@\|--auto|Tell which server would be selected and abort the query
--a\|--arin|Use the American Registry for Internet Numbers (ARIN) database. It contains network numbers used in those parts of the world covered neither by APNIC, AfriNIC, LACNIC, nor by RIPE. The query syntax is documented at https://www.arin.net/resources/whoisrws/whois_api.html#nicname
--A\|--apnic|Use the Asia/Pacific Network Information Center (APNIC) database. It contains network numbers used in East Asia, Australia, New Zealand, and the Pacific islands. Get query syntax documentation using whois ‐A help
+-a\|--arin|Use the American Registry for Internet Numbers (ARIN) database. It contains network numbers used in those parts of the world covered neither by APNIC, AfriNIC, LACNIC, nor by RIPE. The query syntax is documented at [https://www.arin.net/resources/registry/whois/rws/cli/](https://www.arin.net/resources/registry/whois/rws/cli/)
+-A\|--apnic|Use the Asia/Pacific Network Information Center (APNIC) database. It contains network numbers used in East Asia, Australia, New Zealand, and the Pacific islands. The query syntax is documented at [https://www.apnic.net/manage-ip/using-whois/searching/query-options/](https://www.apnic.net/manage-ip/using-whois/searching/query-options/) or you can get it using whois -A help
 -b\|--abuse|Use the Network Abuse Clearinghouse database. It contains addresses to which network abuse should be reported, indexed by domain name.
 -c\|--tld\|--country TLD|This is the equivalent of using the -h option with an argument of "TLD.whois‐servers.net". This can be helpful for locating country‐class TLD whois servers.
--f\|--afrinic|Use the African Network Information Centre (AfriNIC) database. It contains network numbers used in Africa and the islands of the western Indian Ocean. Get query syntax documentation using whois ‐f help
+-f\|--afrinic|Use the African Network Information Centre (AfriNIC) database. It contains network numbers used in Africa and the islands of the western Indian Ocean. The query syntax was documented at [https://www.afrinic.net/support/whois/manual](https://web.archive.org/web/20201022084312/https://www.afrinic.net/support/whois/manual) or you can get it using whois ‐f help
 -g\|--gov|Use the US non‐military federal government database, which contains points of contact for subdomains of .GOV.
 -i\|--internic|Use the traditional Network Information Center (InterNIC) (whois.internic.net) database. This now contains only registrations for domain names under .COM, .NET, .EDU. You can specify the type of object to search for like whois ‐i ’type name’ where type can be domain, nameserver, registrar. The name can contain * wildcards.
 -I\|--iana|Use the Internet Assigned Numbers Authority (IANA) database.
 -k\|--kisa\|--krnic|Use the National Internet Development Agency of Korea’s (KRNIC) database. It contains network numbers and domain contact information for Korea.
--l\|--lacnic|Use the Latin American and Caribbean IP address Regional Registry (LACNIC) database. It contains network numbers used in much of Latin America and the Caribbean.
+-l\|--lacnic|Use the Latin American and Caribbean IP address Regional Registry (LACNIC) database. This server accepts only direct match queries (POCs, ownerid, CIDR blocks, IP and AS numbers).
 -m\|--ra\|--radb|Use the Route Arbiter Database (RADB) database. It contains route policy specifications for a large number of operators’ networks.
 -P\|--peering|Use the PeeringDB database of AS numbers. It contains details about presence at internet peering points for many network operators.
--r\|--ripe|Use the Réseaux IP Européens (RIPE) database. It contains network numbers and domain contact information for Europe. Get query syntax documentation using whois ‐r help
+-r\|--ripe|Use the Réseaux IP Européens (RIPE) database. It contains network numbers and domain contact information for Europe. The query syntax is documented at [https://docs.db.ripe.net/Tables-of-Query-Types-Supported-by-the-RIPE-Database#tables-of-query-types-supported-by-the-ripe-database](https://docs.db.ripe.net/Tables-of-Query-Types-Supported-by-the-RIPE-Database#tables-of-query-types-supported-by-the-ripe-database) or you can get it using whois ‐r help
 ---|---
 -d\|--db\|--database DIR|Use the DIR directory as WHOIS cache database
 -D\|--nodb|Don't use the environment defined cache database
@@ -124,6 +124,8 @@ whois ‐r ‐‐ ’‐t domain’
 ## SEE ALSO
 [wis(1)](https://github.com/HubTou/wis)
 
+[ARIN's RDAP and Whois Services](https://www.arin.net/resources/registry/whois/)
+
 ## STANDARDS
 K.  Harrenstien,  M. Stahl, and E. Feinler, NICNAME/WHOIS, RFC 954, October 1985.
 
@@ -137,7 +139,7 @@ This re-implementation tries to follow the [PEP 8](https://www.python.org/dev/pe
 To be tested under Windows.
 
 ## HISTORY
-The **whois** command appeared in 4.3BSD.
+The **whois** command appeared in 4.3BSD (OpenBSD's version mentions 4.1cBSD but a [whois manpage](https://www.tuhs.org/cgi-bin/utree.pl?file=4.3BSD/usr/man/man1/whois.1) only appears in 4.3BSD).
 
 This re-implementation was made for the [PNU project](https://github.com/HubTou/PNU).
 
