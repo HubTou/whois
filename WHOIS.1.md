@@ -4,11 +4,35 @@
 WHOIS - Internet domain name and network number directory service
 
 ## SYNOPSIS
-**COMMAND**
+**whois**
 \[--debug\]
 \[--help|-?\]
 \[--version\]
+[-@|--auto]
+[-a|--arin]
+[-A|--apnic]
+[-b|--abuse]
+[-c|--tld|--country TLD]
+[-d|--db|--database DIR]
+[-D|--nodb]
+[-f|--afrinic]
+[-F|--force]
+[-g|--gov]
+[-h|--host HOST]
+[-i|--internic]
+[-I|--iana]
+[-k|--kisa|--krnic]
+[-l|--lacnic]
+[-m|--ra|--radb]
+[-p|--port PORT]
+[-q|--quiet]
+[-P|--peering]
+[-Q|--quick]
+[-r|--ripe]
+[-R|--recursive]
+[-S|--verbatim]	   
 \[--\]
+simple_query|"complex_query" ...
 
 ## DESCRIPTION
 The **whois** utility looks up records in the databases maintained by several Network Information Centers (NICs).
