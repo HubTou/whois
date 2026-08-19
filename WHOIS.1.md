@@ -8,40 +8,40 @@ WHOIS - Internet domain name and network number directory service
 \[--debug\]
 \[--help|-?\]
 \[--version\]
-[-@|--auto]
-[-a|--arin]
-[-A|--apnic]
-[-b|--abuse]
-[-c|--tld|--country TLD]
-[-d|--db|--database DIR]
-[-D|--nodb]
-[-f|--afrinic]
-[-F|--force]
-[-g|--gov]
-[-h|--host HOST]
-[-i|--internic]
-[-I|--iana]
-[-k|--kisa|--krnic]
-[-l|--lacnic]
-[-m|--ra|--radb]
-[-p|--port PORT]
-[-q|--quiet]
-[-P|--peering]
-[-Q|--quick]
-[-r|--ripe]
-[-R|--recursive]
-[-S|--verbatim]	   
+\[-@|--auto\]
+\[-a|--arin\]
+\[-A|--apnic\]
+\[-b|--abuse\]
+\[-c|--tld|--country TLD\]
+\[-d|--db|--database DIR\]
+\[-D|--nodb\]
+\[-f|--afrinic\]
+\[-F|--force\]
+\[-g|--gov\]
+\[-h|--host HOST\]
+\[-i|--internic\]
+\[-I|--iana\]
+\[-k|--kisa|--krnic\]
+\[-l|--lacnic\]
+\[-m|--ra|--radb\]
+\[-p|--port PORT\]
+\[-q|--quiet\]
+\[-P|--peering\]
+\[-Q|--quick\]
+\[-r|--ripe\]
+\[-R|--recursive\]
+\[-S|--verbatim\]	   
 \[--\]
 simple_query|"complex_query" ...
 
 ## DESCRIPTION
 The **whois** utility looks up records in the databases maintained by several Network Information Centers (NICs).
 
-By default whois starts by querying the Internet Assigned Numbers Authority (IANA) whois server, and follows referrals to whois servers that have  more specific  details  about the query name. 
+By default whois starts by querying the Internet Assigned Numbers Authority (IANA) whois server, and follows referrals to whois servers that have more specific details about the query. 
 The IANA whois server knows about IP address and AS numbers as well as domain names.
 
-There are a few special cases where referrals do not work,  so  whois goes directly to the appropriate server.
-These include point‐of‐contact handles for ARIN, nic.at, NORID, and RIPE, and domain names under ac.uk.
+However, when the query is about an IP address, this **whois** version version will directly goes to the appropriate registry server,
+as well as automatically following to the relevant registry server when the ARIN registry points to another registry without issuing a redirection.
 
 ### OPTIONS
 Options | Use
