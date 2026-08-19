@@ -37,10 +37,10 @@ simple_query|'complex query' ...
 ## DESCRIPTION
 The **whois** utility looks up records in the databases maintained by several Network Information Centers (NICs).
 
-By default whois starts by querying the Internet Assigned Numbers Authority (IANA) whois server, and follows referrals to whois servers that have more specific details about the query. 
+By default **whois** starts by querying the Internet Assigned Numbers Authority (IANA) whois server, and follows referrals to whois servers that have more specific details about the query. 
 The IANA whois server knows about IP address and AS numbers as well as domain names.
 
-However, when the query is about an IP address, this **whois** version version will directly goes to the appropriate registry server,
+However, when the query is about an IP address, this **whois** version will directly goes to the appropriate registry server,
 as well as automatically following to the relevant registry server when the ARIN registry points to another registry without issuing a redirection.
 
 ### OPTIONS
@@ -87,7 +87,13 @@ Other classical environment variables:
 Variable | Use
 ------- | ---
 WHOIS_SERVER|The primary default whois server. If this is unset, whois uses the RA_SERVER environment variable.
-RA_SERVER|The secondary default whois server. If this is unset, whois will use whois.iana.org.
+RA_SERVER|The secondary default whois server. If this is unset, whois will use whois.iana.org or auto-select the server for IP addresses.
+
+Version specific environment variables:
+Variable | Use
+------- | ---
+WHOIS_DATABASE|A directory pathname where the compressed query results will be stored
+WHOIS_CACHEDAYS|An integer specifying the number of days a cached result can be reused
 
 ## EXIT STATUS
 The **whois** utility exits 0 on success, and >0 if an error occurs.
