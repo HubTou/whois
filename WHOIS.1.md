@@ -119,7 +119,8 @@ whois ‐r ‐‐ ’‐t domain’
 ```
 
 ## SEE ALSO
-[wis(1)](https://github.com/HubTou/wis)
+[wis(1)](https://github.com/HubTou/wis),
+[whois(3)](https://github.com/HubTou/whois/blob/main/WHOIS.3.md)
 
 ## STANDARDS
 K.  Harrenstien,  M. Stahl, and E. Feinler, NICNAME/WHOIS, RFC 954, October 1985.
