@@ -6,7 +6,9 @@ WHOIS - Internet domain name and network number directory service
 ## SYNOPSIS
 import **pnu_whois**
 
-String pnu_whois.**auto_select_server**(String query)
+String pnu_whois.**auto_select_server**(
+    String query
+)
 
 List pnu_whois.**whois**(
     String query,
