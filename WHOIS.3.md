@@ -101,7 +101,7 @@ This work is dedicated to the memory of my late colleague **Sébastien Richard**
 I miss you Seb'.
 
 ## LICENSE
-It is available under the [3-clause BSD license](https://opensource.org/licenses/BSD-3-Clause).
+This library is available under the [3-clause BSD license](https://opensource.org/licenses/BSD-3-Clause).
 
 ## AUTHORS
 [Hubert Tournier](https://github.com/HubTou)
