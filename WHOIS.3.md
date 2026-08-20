@@ -67,18 +67,10 @@ You can finally print cache hits or misses to stderr if the *debug* parameter is
 ## ENVIRONMENT
 The WHOIS_DEBUG environment variable can also be set to any value to enable debug mode.
 
-The *FLAVOUR* or *WHOIS_FLAVOUR* environment variables can be set to one of the following values, to implement only the corresponding options and behaviours:
-* bsd | bsd:freebsd : FreeBSD [whois(1)](https://www.freebsd.org/cgi/man.cgi?query=whois)
-
-Other classical environment variables:
 Variable | Use
 ------- | ---
 WHOIS_SERVER|The primary default whois server. If this is unset, whois uses the RA_SERVER environment variable.
 RA_SERVER|The secondary default whois server. If this is unset, whois will use whois.iana.org or auto-select the server for IP addresses.
-
-Version specific environment variables:
-Variable | Use
-------- | ---
 WHOIS_DATABASE|A directory pathname where the compressed query results will be stored
 WHOIS_CACHEDAYS|An integer specifying the number of days a cached result can be reused
 
