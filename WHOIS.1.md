@@ -121,8 +121,6 @@ whois ‐r ‐‐ ’‐t domain’
 ## SEE ALSO
 [wis(1)](https://github.com/HubTou/wis)
 
-[ARIN's RDAP and Whois Services](https://www.arin.net/resources/registry/whois/)
-
 ## STANDARDS
 K.  Harrenstien,  M. Stahl, and E. Feinler, NICNAME/WHOIS, RFC 954, October 1985.
 
@@ -151,7 +149,7 @@ It is available under the [3-clause BSD license](https://opensource.org/licenses
 ## AUTHORS
 [Hubert Tournier](https://github.com/HubTou)
 
-This manual page is mainly based on the one written for [FreeBSD](https://www.freebsd.org/).
+This manual page is based on the one written for [FreeBSD](https://www.freebsd.org/).
 
 ## CAVEATS
 When serving answers from the database cache, only the main item requested is shown.
