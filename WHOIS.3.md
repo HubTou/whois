@@ -62,7 +62,7 @@ You must specify the directory to use as a (.xz compressed files) cache database
 
 You can use set the *force_refresh* parameter to True if you want to bypass and update the cache.
 
-It can also print cache hits or misses to stderr if the *debug* parameter is set to True.
+You can finally print cache hits or misses to stderr if the *debug* parameter is set to True.
 
 ## ENVIRONMENT
 The WHOIS_DEBUG environment variable can also be set to any value to enable debug mode.
