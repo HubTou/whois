@@ -65,7 +65,7 @@ Options | Use
 -l\|--lacnic|Use the Latin American and Caribbean IP address Regional Registry (LACNIC) database. This server accepts only direct match queries (POCs, ownerid, CIDR blocks, IP and AS numbers).
 -m\|--ra\|--radb|Use the Route Arbiter Database (RADB) database. It contains route policy specifications for a large number of operators’ networks.
 -P\|--peering|Use the PeeringDB database of AS numbers. It contains details about presence at internet peering points for many network operators.
--r\|--ripe|Use the Réseaux IP Européens (RIPE) database. It contains network numbers and domain contact information for Europe. The query syntax is documented at [https://docs.db.ripe.net/Tables-of-Query-Types-Supported-by-the-RIPE-Database#tables-of-query-types-supported-by-the-ripe-database](https://docs.db.ripe.net/Tables-of-Query-Types-Supported-by-the-RIPE-Database#tables-of-query-types-supported-by-the-ripe-database) or you can get it using whois ‐r help
+-r\|--ripe|Use the Réseaux IP Européens (RIPE) database. It contains network numbers and domain contact information for Europe. The query syntax is documented at [https://docs.db.ripe.net/Tables-of-Query-Types-Supported-by-the-RIPE-Database](https://docs.db.ripe.net/Tables-of-Query-Types-Supported-by-the-RIPE-Database#tables-of-query-types-supported-by-the-ripe-database) or you can get it using whois ‐r help
 -d\|--db\|--database DIR|Use the DIR directory as WHOIS cache database
 -D\|--nodb|Don't use the environment defined cache database
 -F\|--force|Force a refresh of the WHOIS cache for the queries
@@ -131,7 +131,7 @@ The **whois** utility is a standard UNIX command, though not a POSIX one.
 This re-implementation tries to follow the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide for [Python](https://www.python.org/) code.
 
 ## PORTABILITY
-To be tested under Windows.
+Tested OK under Windows.
 
 ## HISTORY
 The **whois** command appeared in 4.3BSD (OpenBSD's version mentions 4.1cBSD but a [whois manpage](https://www.tuhs.org/cgi-bin/utree.pl?file=4.3BSD/usr/man/man1/whois.1) only appears in 4.3BSD).
