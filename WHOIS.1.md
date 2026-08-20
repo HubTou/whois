@@ -157,7 +157,9 @@ For an inetnum record, for example, the contacts, organisation and routes are no
 If you want an answer similar to the original one, use the *-D* option to bypass the database cache.
 Note that for the ARIN registry, there is no obvious relationship with original contacts when you use a cached answer...
 
-The database cache is never purged. 
+The database cache is never purged.
+
+I didn't made extensive tests to ensure 100% similar behaviour for the FreeBSD flavour.
 
 ## SECURITY CONSIDERATIONS
 Be careful not to send too many requests to WHOIS servers or use the caching options to avoid unnecessary ones!
