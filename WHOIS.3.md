@@ -60,7 +60,7 @@ or it'll fallback to **recursive_whois**() but with *Show_intermediates*=False.
 
 You must specify the directory to use as a (.xz compressed files) cache database with the *database* parameter, and the number of day a cached result is considered fresh with the *cachedays* parameter.
 
-You can use set the *force_refresh* parameter to True if you want to bypass and update the cache.
+You can set the *force_refresh* parameter to True if you want to bypass and update the cache.
 
 You can finally print cache hits or misses to stderr if the *debug* parameter is set to True.
 
