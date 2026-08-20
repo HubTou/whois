@@ -65,7 +65,7 @@ You can use set the *force_refresh* parameter to True if you want to bypass and 
 You can finally print cache hits or misses to stderr if the *debug* parameter is set to True.
 
 ## ENVIRONMENT
-The WHOIS_DEBUG environment variable can also be set to any value to enable debug mode.
+The WHOIS_DEBUG environment variable can be set to any value to enable debug mode.
 
 Variable | Use
 ------- | ---
