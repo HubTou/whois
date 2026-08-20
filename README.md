@@ -2,7 +2,7 @@
 Once you have installed [Python](https://www.python.org/downloads/) and its packages manager [pip](https://pip.pypa.io/en/stable/installation/),
 use one of the following commands, depending on if you want only this tool, the full set of PNU tools, or PNU plus a selection of additional third-parties tools:
 
-pip install [pnu-whois](https://pypi.org/project/pnu-whois/)
+pip install [pnu_whois](https://pypi.org/project/pnu_whois/)
 <br>
 pip install [PNU](https://pypi.org/project/PNU/)
 <br>
