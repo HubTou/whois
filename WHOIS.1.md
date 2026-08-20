@@ -134,7 +134,7 @@ This re-implementation tries to follow the [PEP 8](https://www.python.org/dev/pe
 Tested OK under Windows.
 
 ## HISTORY
-The **whois** command appeared in 4.3BSD (OpenBSD's version mentions 4.1cBSD but a [whois manpage](https://www.tuhs.org/cgi-bin/utree.pl?file=4.3BSD/usr/man/man1/whois.1) only appears in 4.3BSD).
+The **whois** command appeared in 4.3BSD (OpenBSD's version mentions 4.1cBSD but a [whois manpage](https://www.tuhs.org/cgi-bin/utree.pl?file=4.3BSD/usr/man/man1/whois.1) only appeared in 4.3BSD).
 
 This re-implementation was made for the [PNU project](https://github.com/HubTou/PNU).
 
