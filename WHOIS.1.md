@@ -75,7 +75,7 @@ Options | Use
 --|Options processing terminator. Specific WHOIS server options can be used after
 
 ## ENVIRONMENT
-The WHOIS_DEBUG environment variable can also be set to any value to enable debug mode.
+The WHOIS_DEBUG environment variable can be set to any value to enable debug mode.
 
 The *FLAVOUR* or *WHOIS_FLAVOUR* environment variables can be set to one of the following values, to implement only the corresponding options and behaviours:
 * bsd | bsd:freebsd : FreeBSD [whois(1)](https://www.freebsd.org/cgi/man.cgi?query=whois)
