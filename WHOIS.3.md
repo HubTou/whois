@@ -67,6 +67,8 @@ You can finally print cache hits or misses to stderr if the *debug* parameter is
 ## ENVIRONMENT
 The WHOIS_DEBUG environment variable can be set to any value to enable debug mode.
 
+Other environment variables :
+
 Variable | Use
 ------- | ---
 WHOIS_SERVER|The primary default whois server. If this is unset, whois uses the RA_SERVER environment variable.
