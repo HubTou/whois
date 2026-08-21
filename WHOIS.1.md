@@ -30,7 +30,7 @@ WHOIS - Internet domain name and network number directory service
 \[-Q|--quick\]
 \[-r|--ripe\]
 \[-R|--recursive\]
-\[-S|--verbatim\]	   
+\[-S|--verbatim\]      
 \[--\]
 simple_query|'complex query' ...
 
@@ -42,6 +42,8 @@ The IANA whois server knows about IP address and AS numbers as well as domain na
 
 However, when the query is about an IP address, this **whois** version will directly goes to the appropriate registry server,
 as well as automatically following to the relevant registry server when the ARIN registry points to another registry without issuing a redirection.
+
+The options are as follows:
 
 ### OPTIONS
 Options | Use
@@ -164,3 +166,4 @@ I didn't made extensive tests to ensure 100% similar behaviour for the FreeBSD f
 
 ## SECURITY CONSIDERATIONS
 Be careful not to send too many requests to WHOIS servers or use the caching options to avoid unnecessary ones!
+

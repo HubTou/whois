@@ -118,3 +118,4 @@ The database cache is never purged.
 
 ## SECURITY CONSIDERATIONS
 Be careful not to send too many requests to WHOIS servers or use the caching version to avoid unnecessary ones!
+

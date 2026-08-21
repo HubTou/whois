@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<test-suite program="whois" processor="b2bt 1.1" ID="@(#) $Id: whois.xml - back to back test suite for whois v1.0.0 (January 2, 2023) by Hubert Tournier $">
+
+  <test-case name="whois without arguments">
+    <cmd>
+      whois
+    </cmd>
+  </test-case>
+  
+  <test-case name="Illegal option">
+    <cmd>
+      whois -u
+    </cmd>
+  </test-case>
+  
+  <test-case name="Options terminator handling">
+    <cmd>
+      whois -- 8.8.8.8
+    </cmd>
+  </test-case>
+  
+</test-suite>

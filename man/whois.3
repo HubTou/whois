@@ -1,0 +1,195 @@
+.Dd August 21, 2026
+.Dt WHOIS 3
+.Os
+.Sh NAME
+.Nm WHOIS
+.Nd Internet domain name and network number directory service
+.Sh SYNOPSIS
+.Em import pnu_whois
+.Pp
+.Ft String
+.Fo pnu_whois.auto_select_server
+.Fa "String query"
+.Fc
+.Ft List
+.Fo pnu_whois.whois
+.Fa "String query"
+.Fa "String server=whois.iana.org"
+.Fa "Integer port=43"
+.Fa "Boolean show_comments=True"
+.Fc
+.Ft List
+.Fo pnu_whois.recursive_whois
+.Fa "String query"
+.Fa "String server=whois.iana.org"
+.Fa "Integer port=43"
+.Fa "Boolean recursive=True"
+.Fa "Boolean show_intermediates=True"
+.Fa "Boolean show_redirections=False"
+.Fa "Boolean show_comments=True"
+.Fc
+.Ft List
+.Fo pnu_whois.cached_whois
+.Fa "String query"
+.Fa "String database"
+.Fa "Integer cachedays"
+.Fa "Boolean force_refresh=False"
+.Fa "String server=whois.iana.org"
+.Fa "Integer port=43"
+.Fa "Boolean recursive=True"
+.Fa "Boolean show_comments=True"
+.Fa "Boolean debug=False"
+.Fc
+.Sh DESCRIPTION
+The 
+.Fn auto_select_server
+function attempts to determine the authoritative server for the
+.Fa query
+and returns its name.
+For IP addresses, it uses the
+.Lk https://www.iana.org/assignments/ipv4-address-space [IPv4 Address Space]
+from IANA, in a way similar to RDAP.
+.Pp
+The
+.Fn whois ,
+.Fn recursive_whois
+and
+.Fn cached_whois
+functions all perform a direct
+.Fa query
+to a WHOIS
+.Fa server :
+.Fa port
+and return the results as a list of lines.
+.Pp
+If you don't want to specify a server:port, or use the default whois.iana.org:43, you can set the server parameter to "auto" and it'll use the
+.Fn auto_select_server
+function above.
+.Pp
+The server results are unaltered with the possible exception of comments (lines starting with "%" or "#") which can be stripped by setting the
+.Fa show_comments
+parameter to False.
+.Pp
+The
+.Fn recursive_whois
+function will follow servers redirections (lines starting with "whois:") unless its
+.Fa recursive
+parameter is set to False.
+.Pp
+By default, it will include the intermediate servers results unless its
+.Fa show_intermediates
+parameter is set to False.
+.Pp
+It can also print the server redirections to
+.Pa stderr
+if the
+.Fa show_redirections
+parameter is set to True.
+.Pp
+The
+.Fn cached_whois
+function will attempt to answer from its cache database first if a fresh enough result is available, or it'll fallback to
+.Fn recursive_whois
+but with
+.Fa Show_intermediates=False .
+.Pp
+You must specify the directory to use as a (.xz compressed files) cache database with the
+.Fa database
+parameter, and the number of day a cached result is considered fresh with the
+.Fa cachedays
+parameter.
+.Pp
+You can set the
+.Fa force_refresh
+parameter to True if you want to bypass and update the cache.
+.Pp
+You can finally print cache hits or misses to
+.Pa stderr
+if the
+.Fa debug
+parameter is set to True.
+.Sh ENVIRONMENT
+The
+.Ev WHOIS_DEBUG
+environment variable can be set to any value to enable debug mode.
+.Pp
+Other environment variables:
+.Bl -bullet
+.It
+.Ev WHOIS_SERVER
+The primary default whois server. If this is unset, whois uses the
+.Ev RA_SERVER
+environment variable.
+.It
+.Ev RA_SERVER
+The secondary default whois server. If this is unset, whois will use whois.iana.org or auto\-select the server for IP addresses.
+.It
+.Ev WHOIS_DATABASE
+A directory pathname where the compressed query results will be stored
+.It
+.Ev WHOIS_CACHEDAYS
+An integer specifying the number of days a cached result can be reused
+.El
+.Sh SEE ALSO
+.Xr whois 1
+.Sh STANDARDS
+.Rs
+.%A K. Harrenstien
+.%A M. Stahl
+.%A E. Feinler
+.%D October 1985
+.%R RFC 954
+.%T NICNAME/WHOIS
+.Re
+.Pp
+.Rs
+.%A L. Daigle
+.%D September 2004
+.%R RFC 3912
+.%T WHOIS Protocol Specification
+.Re
+.Pp
+The
+.Lb whois
+library is not a standard UNIX one.
+.Pp
+It tries to follow the PEP 8 style guide for Python code.
+.Sh PORTABILITY
+Tested OK under Windows.
+.Sh HISTORY
+The
+.Nm
+command appeared in
+.Bx 4.3
+(
+.Ox 's
+version mentions
+.Bx 4.1c
+but a whois manpage only appeared in
+.Bx 4.3 ),
+but there was no companion library.
+.Pp
+This implementation was made for the
+.Lk https://github.com/HubTou/PNU [PNU project]
+.Pp
+It was mostly written in December 2022, but I left it unfinished by the end of my winter vacations and forgot to update the related GitHub repository...
+.Pp
+This work is dedicated to the memory of my late colleague
+.Em S\(aaebastien Richard ,
+who passed away while I was finalizing it.
+I miss you Seb'.
+.Sh LICENSE
+This library is available under the 3\-clause BSD license.
+.Sh AUTHORS
+.An Hubert Tournier
+.Sh CAVEATS
+When serving answers from the database cache, only the main item requested is returned.
+For an inetnum record, for example, the contacts, organisation and routes are not returned, though you can request their cached version on their own.
+If you want an answer similar to the original one, use the
+.Pa force_refresh
+option to bypass the database cache.
+Note that for the ARIN registry, there is no obvious relationship with original contacts when you use a cached answer...
+.Pp
+The database cache is never purged.
+.Sh SECURITY CONSIDERATIONS
+Be careful not to send too many requests to WHOIS servers or use the caching version to avoid unnecessary ones!
